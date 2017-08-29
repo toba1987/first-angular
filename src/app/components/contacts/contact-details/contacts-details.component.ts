@@ -7,8 +7,8 @@ import { ContactsService } from '../../../shared/services/contacts.service';
   templateUrl: './contacts-details.component.html',
 })
 export class ContactsDetailsComponent implements OnInit {
-
-  private contact: any;
+  //zato sto vraca samo jedan kontakt idu {}, posto vraca jedan objekat
+  private contact: any = {};
 
   constructor(private route: ActivatedRoute,
               private contactsService: ContactsService) {
@@ -18,7 +18,10 @@ export class ContactsDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(() => {
       let id = parseInt(this.route.snapshot.paramMap.get('id'));
-      this.contact = this.contactsService.getContacts().find(item => item['id'] == id);
+      this.contactsService.getContacts().subscribe((data: any[]) => {
+        this.contact = data.find(item => item['id'] == id);
+      })
+
     });
   }
 

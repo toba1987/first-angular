@@ -1,4 +1,4 @@
-export let contacts = [
+/*export let contacts = [
     {
         id: 1,
         firstName: 'John',
@@ -23,4 +23,4 @@ export let contacts = [
         lastName: 'Deere',
         email: 'john@gmail.com'
     }
-];
+];*/
