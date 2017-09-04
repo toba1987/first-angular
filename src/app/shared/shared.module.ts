@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactsService } from './services/contacts.service';
 import { HttpClientModule } from '@angular/common/http';
+import {  PageTitleService } from './services/page-title.service';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
     /*provider je za service*/
   providers: [
-        ContactsService
+        ContactsService,
+      PageTitleService
   ],
   exports: [
     FilterPipe

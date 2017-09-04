@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Contact } from '../models/contact.model';
+import { Observable, Observer } from 'rxjs';
+
 @Injectable()
 export class ContactsService {
 
@@ -18,4 +19,24 @@ export class ContactsService {
           email: contact.email
       });
   }
+
+  public editContact(contact: Contact){
+      return this.http.put('http://localhost:8000/contacts-edit.php', {
+         id: contact.id,
+         firstName: contact.firstName,
+         lastName: contact.lastName,
+          email: contact.email
+      });
+  }
+
+    removeContact(contact: Contact)
+    {
+        return new Observable((o: Observer<any>) => {
+            setTimeout(() => {
+                o.next(contact);
+                return o.complete();
+
+                }, 1000);
+        });
+    }
 }

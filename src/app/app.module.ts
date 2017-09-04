@@ -13,19 +13,27 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { ContactsDetailsComponent } from './components/contacts/contact-details/contacts-details.component';
 
 import { CustomFormsModule } from 'ng2-validation';
-
+import { ContactFormComponent } from './components/contacts/contact-form/contact-form.component';
+import { ContastRowComponent } from './components/contacts/contact-row/contact-row.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,  ContactsComponent, LayoutComponent, MessagesComponent, ContactsDetailsComponent
+    AppComponent,
+      ContactsComponent,
+      LayoutComponent,
+      MessagesComponent,
+      ContactsDetailsComponent,
+      ContactFormComponent,
+      ContastRowComponent
   ],
   imports: [
       BrowserModule,
       AppRoutingModule,
       SharedModule,
       FormsModule,
-      CustomFormsModule
+      CustomFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
